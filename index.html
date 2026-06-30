@@ -102,13 +102,9 @@
 
 <!-- HERO -->
 <section class="home-hero" aria-label="Hero">
-  <div class="home-hero__video-wrap">
-    <iframe
-      src="https://player.vimeo.com/video/809340017?background=1&autoplay=1&loop=1&muted=1&dnt=1"
-      title="Aerial Recon Media showreel"
-      allow="autoplay"
-      loading="eager">
-    </iframe>
+  <div class="home-hero__video-wrap" id="heroVideoWrap" data-vimeo-bg="809340017">
+    <!-- Poster shows instantly; the Vimeo iframe is injected after load so it never blocks first paint -->
+    <img class="home-hero__poster" src="images/hero-og.jpg" alt="Aerial drone view of the Miami coastline at sunset">
   </div>
   <div class="home-hero__overlay"></div>
   <div class="home-hero__content">
@@ -120,6 +116,7 @@
       <a href="contact/index.html" class="btn btn--outline-white">Contact Us</a>
     </div>
   </div>
+  <div class="home-hero__scroll-cue" aria-hidden="true"></div>
 </section>
 
 <!-- INTRO -->
@@ -312,12 +309,12 @@
 <!-- PHOTO GALLERY -->
 <section style="background:var(--cream-alt);padding:0;">
   <div class="photo-grid reveal">
-    <img src="images/miami-restaurant-photography-deck-ocean-view.jpg" alt="Miami restaurant photography — outdoor deck with ocean view" loading="lazy">
-    <img src="images/miami-restaurant-photography-outdoor-dining.jpg" alt="Miami restaurant photography — outdoor dining table setting" loading="lazy">
-    <img src="images/miami-restaurant-photography-bar-interior.jpg" alt="Miami restaurant photography — interior bar and dining area" loading="lazy">
-    <img src="images/miami-commercial-photography-waiting-room.jpg" alt="Miami commercial photography — building waiting room interior" loading="lazy">
-    <img src="images/miami-commercial-photography-living-room-bar.jpg" alt="Miami commercial photography — modern living room with bar area" loading="lazy">
-    <img src="images/miami-commercial-photography-dining-room.jpg" alt="Miami commercial photography — modern dining room interior" loading="lazy">
+    <img src="images/miami-restaurant-photography-deck-ocean-view.webp" alt="Miami restaurant photography — outdoor deck with ocean view" loading="lazy">
+    <img src="images/miami-restaurant-photography-outdoor-dining.webp" alt="Miami restaurant photography — outdoor dining table setting" loading="lazy">
+    <img src="images/miami-restaurant-photography-bar-interior.webp" alt="Miami restaurant photography — interior bar and dining area" loading="lazy">
+    <img src="images/miami-commercial-photography-waiting-room.webp" alt="Miami commercial photography — building waiting room interior" loading="lazy">
+    <img src="images/miami-commercial-photography-living-room-bar.webp" alt="Miami commercial photography — modern living room with bar area" loading="lazy">
+    <img src="images/miami-commercial-photography-dining-room.webp" alt="Miami commercial photography — modern dining room interior" loading="lazy">
   </div>
 </section>
 
@@ -374,7 +371,7 @@
 
   <div class="footer-bottom">
     <div class="container">
-      <p>&copy; Copyright 2023 Aerial Recon, LLC | All Rights Reserved.</p>
+      <p>&copy; Copyright 2026 Aerial Recon, LLC | All Rights Reserved. &nbsp;|&nbsp; Site by <a href="https://thatskrispy.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">ThatsKrispy</a></p>
     </div>
   </div>
 </footer>

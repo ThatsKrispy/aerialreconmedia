@@ -54,7 +54,40 @@
     });
   });
 
-  /* ---- NAV SCROLL SHADOW ---- */
+  /* ---- HERO BACKGROUND VIDEO — lazy inject after load ---- */
+  /* The poster image paints instantly. We only attach the heavy Vimeo
+     iframe once the page has finished loading (and skip it entirely on
+     slow connections / reduced-motion), so it never blocks first paint. */
+  const heroWrap = document.getElementById('heroVideoWrap');
+  if (heroWrap && heroWrap.dataset.vimeoBg) {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const conn = navigator.connection;
+    const slowNet = conn && (conn.saveData || /2g/.test(conn.effectiveType || ''));
+    if (!prefersReduced && !slowNet) {
+      const injectHeroVideo = () => {
+        const id = heroWrap.dataset.vimeoBg;
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://player.vimeo.com/video/${id}?background=1&autoplay=1&loop=1&muted=1&dnt=1`;
+        iframe.title = 'Aerial Recon Media showreel';
+        iframe.allow = 'autoplay';
+        iframe.addEventListener('load', () => {
+          const poster = heroWrap.querySelector('.home-hero__poster');
+          if (poster) {
+            poster.style.transition = 'opacity 0.8s ease';
+            poster.style.opacity = '0';
+          }
+        });
+        heroWrap.appendChild(iframe);
+      };
+      if (document.readyState === 'complete') {
+        setTimeout(injectHeroVideo, 200);
+      } else {
+        window.addEventListener('load', () => setTimeout(injectHeroVideo, 200));
+      }
+    }
+  }
+
+
   const header = document.querySelector('.site-header');
   if (header) {
     const handleScroll = () => {

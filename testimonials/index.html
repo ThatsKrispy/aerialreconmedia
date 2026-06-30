@@ -20,9 +20,11 @@
   <style>
     .t-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
     .t-card {
-      background:var(--white); border:1px solid var(--border); border-radius:4px;
+      background:var(--white); border:1px solid var(--border); border-radius:6px;
       padding:24px; box-shadow:0 2px 10px rgba(0,0,0,0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
+    .t-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(20,30,60,0.12); }
     .t-head { display:flex; align-items:center; gap:12px; margin-bottom:10px; }
     .t-avatar {
       width:44px;height:44px;border-radius:50%;flex-shrink:0;
@@ -287,7 +289,7 @@
       </div>
     </div>
   </div>
-  <div class="footer-bottom"><div class="container"><p>&copy; Copyright 2023 Aerial Recon, LLC | All Rights Reserved.</p></div></div>
+  <div class="footer-bottom"><div class="container"><p>&copy; Copyright 2026 Aerial Recon, LLC | All Rights Reserved. &nbsp;|&nbsp; Site by <a href="https://thatskrispy.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">ThatsKrispy</a></p></div></div>
 </footer>
 <script src="../js/main.js"></script>
 </body>
