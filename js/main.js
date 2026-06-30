@@ -62,7 +62,7 @@
   const modalWrap = modal ? modal.querySelector('.video-modal__iframe-wrap') : null;
   const closeBtn  = modal ? modal.querySelector('.video-modal__close') : null;
 
-  // Vimeo IDs map for all gallery thumbs
+  // Vimeo IDs map for all gallery thumbs (includes .video-thumb-hero)
   const thumbs = document.querySelectorAll('[data-vimeo]');
 
   thumbs.forEach(thumb => {
