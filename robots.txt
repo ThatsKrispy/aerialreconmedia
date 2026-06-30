@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aerialreconmedia.com/sitemap.xml
