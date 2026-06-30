@@ -4,13 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <title>About Us | Aerial Recon Media — Miami Photography, Videography & Drone</title>
-  <meta name="description" content="Our team is dedicated to capturing stunning visuals that showcase your property, event, or business from unique perspectives.">
+  <meta name="description" content="Aerial Recon Media is the premier, full-service Photography, Videography & Inspection Drone Service company based out of Miami, FL.">
   <meta property="og:image" content="../images/hero-og.jpg">
   <link rel="icon" type="image/png" href="../images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .values-numbered {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px 56px;
+    }
+    .value-num-item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 8px;
+      align-items: start;
+    }
+    .value-num-item .num {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 3.4rem;
+      color: var(--orange);
+      line-height: 1;
+    }
+    .value-num-item p { font-size: 0.92rem; color: var(--body); margin: 0; padding-top: 6px; }
+    @media (max-width: 768px) {
+      .values-numbered { grid-template-columns: 1fr; }
+      .value-num-item { grid-template-columns: 70px 1fr; }
+      .value-num-item .num { font-size: 2.6rem; }
+    }
+  </style>
 </head>
 <body>
 
@@ -40,7 +66,7 @@
 </header>
 
 <nav class="mobile-nav">
-  <span class="eyebrow" style="display:block;padding:14px 24px;border-bottom:1px solid var(--border);">Services</span>
+  <span style="display:block;padding:14px 24px;border-bottom:1px solid rgba(255,255,255,0.1);font-family:var(--font-display);font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.5);">Services</span>
   <div class="mobile-sub">
     <a href="../real-estate/index.html">Real Estate Services</a>
     <a href="../aec/index.html">AEC Services</a>
@@ -54,127 +80,103 @@
   <div class="mobile-nav-cta"><a href="https://go.thryv.com/site/aerialreconllc/online-scheduling" target="_blank" rel="noopener">Book Now</a></div>
 </nav>
 
-<!-- ========== PAGE HERO ========== -->
-<section class="int-hero">
+<!-- TITLE + INTRO -->
+<section class="intro-section reveal" style="padding-top:calc(var(--nav-h) + 48px);">
   <div class="container">
-    <span class="eyebrow">Aerial Recon Media</span>
-    <h1>Full-Service Photography, Videography &amp; Drone Services</h1>
+    <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);">Aerial Recon Media</h2>
+    <p style="max-width:760px;">Aerial Recon Media is the premier, full-service Photography, Videography &amp; Inspection Drone Service company based out of Miami, FL. We offer an impressive array of media services for the Real Estate, Architecture, Engineering, and Construction Industry.</p>
   </div>
 </section>
 
-<!-- ========== WHO WE ARE ========== -->
-<section class="section section--dark">
+<!-- VIDEO + TEXT SPLIT -->
+<section class="section section--white">
   <div class="container">
     <div class="split">
-      <div class="split__content reveal">
-        <span class="eyebrow">Aerial Recon Media</span>
-        <h2>Who We Are</h2>
-        <div class="gold-rule"></div>
-        <p>Aerial Recon Media is the premier, full-service Photography, Videography &amp; Inspection Drone Service company based out of Miami, FL. We offer an impressive array of media services for the Real Estate, Architecture, Engineering, and Construction Industry.</p>
-        <p>We pride ourselves in the quality of our work, fast turnaround, and customer satisfaction. At Aerial Recon Media, our team becomes part of your office!</p>
-        <ul style="margin-top:1.25rem;display:flex;flex-direction:column;gap:8px;">
-          <li style="font-size:0.88rem;color:var(--light);display:flex;gap:8px;"><span style="color:var(--gold);">✓</span> Blue Sky Guaranteed</li>
-          <li style="font-size:0.88rem;color:var(--light);display:flex;gap:8px;"><span style="color:var(--gold);">✓</span> 24 Hour Turn Around</li>
-          <li style="font-size:0.88rem;color:var(--light);display:flex;gap:8px;"><span style="color:var(--gold);">✓</span> Professional Videographers &amp; Photographers</li>
-          <li style="font-size:0.88rem;color:var(--light);display:flex;gap:8px;"><span style="color:var(--gold);">✓</span> FAA Commercial Drone Pilot</li>
-          <li style="font-size:0.88rem;color:var(--light);display:flex;gap:8px;"><span style="color:var(--gold);">✓</span> FAA Night Operation Waiver</li>
-          <li style="font-size:0.88rem;color:var(--light);display:flex;gap:8px;"><span style="color:var(--gold);">✓</span> Licensed and Insured</li>
-        </ul>
-      </div>
-      <div class="split__img reveal reveal-delay-1">
-        <div class="video-wrap">
-          <iframe src="https://player.vimeo.com/video/392687951?dnt=1" title="Aerial Recon Media company overview" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      <div class="reveal">
+        <div class="video-thumb-hero" data-vimeo="392687951">
+          <img src="../images/real-estate-backyard.webp" alt="Aerial Recon Media production still" loading="lazy">
+          <div class="video-thumb-hero__play"><div class="video-thumb-hero__play-btn"></div></div>
         </div>
       </div>
+      <div class="split__content reveal reveal-delay-1">
+        <h2>We Make Projects Come to Life With Video and Photography.</h2>
+        <p>Our Staff of photographers has been providing services to our community for several years. We pride our selves in the quality of our work, fast turn around, and customer satisfaction. At Aerial Recon Media our team becomes part of your office! Call us today and make your next listing stand out.</p>
+        <ul style="margin-top:1rem;display:flex;flex-direction:column;gap:6px;">
+          <li style="font-size:0.9rem;color:var(--body);">• Blue Sky Guaranteed</li>
+          <li style="font-size:0.9rem;color:var(--body);">• 24 Hour Turn Around</li>
+          <li style="font-size:0.9rem;color:var(--body);">• Professional Videographers</li>
+          <li style="font-size:0.9rem;color:var(--body);">• Professional Photographers</li>
+          <li style="font-size:0.9rem;color:var(--body);">• FAA Commercial Drone Pilot</li>
+          <li style="font-size:0.9rem;color:var(--body);">• FAA Night Operation Waiver</li>
+          <li style="font-size:0.9rem;color:var(--body);">• Licensed and Insured</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ========== CORE VALUES ========== -->
-<section class="section section--black">
+<!-- CORE VALUES — NUMBERED -->
+<section class="section section--alt">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">What Drives Us</span>
       <h2>Our Core Values</h2>
-      <div class="gold-rule gold-rule--center"></div>
     </div>
-    <div class="values-grid reveal">
-      <div class="value-item">
-        <img src="../images/value-1.svg" alt="Value 1 — Customer Service">
-        <p>We are committed to providing exceptional customer service, building strong business relationships as a trustworthy partner by contributing to our clients' businesses' success.</p>
-      </div>
-      <div class="value-item">
-        <img src="../images/value-2.svg" alt="Value 2 — Quality">
-        <p>We provide high-quality media content in a creative format that will enhance the perceived value of our clients' marketing goals and needs.</p>
-      </div>
-      <div class="value-item">
-        <img src="../images/value-3.svg" alt="Value 3 — Continuous Learning">
-        <p>We never stop learning so that we can find solutions for our clients' needs and our own. We honestly conduct business, ensuring that all parties benefit from our business dealings.</p>
-      </div>
-      <div class="value-item">
-        <img src="../images/value-4.svg" alt="Value 4 — Loyalty">
-        <p>We will build customer loyalty by nurturing our client relationships. Getting involved with the community and becoming a presence in our industry. We are determined to succeed.</p>
-      </div>
-      <div class="value-item">
-        <img src="../images/value-5.svg" alt="Value 5 — Passion">
-        <p>We are a passionate and capable team who can develop any creative requirement requested by our clients. We enjoy every aspect of our life, and we work with the best disposition, energy, and professionalism.</p>
-      </div>
-      <div class="value-item">
-        <img src="../images/value-6.svg" alt="Value 6 — Full-Service Team">
-        <p>Our team is made up of Directors, Editors, Post-Producers, Sound Producers, FAA Licensed Drone Pilots/Operators, and all the technical personnel to materialize any visual idea you have in mind.</p>
-      </div>
-      <div class="value-item" style="grid-column:2;">
-        <img src="../images/value-7.svg" alt="Value 7 — Faith &amp; Growth">
-        <p>We have faith in our abilities to grow not only our business but to grow personally as well. We challenge ourselves in every project to exceed your expectations.</p>
-      </div>
+    <div class="values-numbered reveal">
+      <div class="value-num-item"><span class="num">.01</span><p>We are committed to providing exceptional customer service, building strong business relationships as a trustworthy partner by contributing to our clients' businesses' success.</p></div>
+      <div class="value-num-item"><span class="num">.05</span><p>We are a passionate and capable team who can develop any creative requirement requested by our clients. We enjoy every aspect of our life, and we work to start each project with the best disposition, energy, and professionalism. We are based in Miami, but we have the capacity and logistics to create, document, and edit anywhere in the world.</p></div>
+      <div class="value-num-item"><span class="num">.02</span><p>We provide high-quality media content in a creative format that will enhance the perceived value of our clients marketing goals and needs.</p></div>
+      <div class="value-num-item"><span class="num">.06</span><p>Our team is made up of Directors, Editors, Post-Producers, Sound Producers, FAA Licensed Drone Pilots/Operators, and all the technical personnel to materialize any visual idea you have in mind. We challenge ourselves in every project to exceed your expectations.</p></div>
+      <div class="value-num-item"><span class="num">.03</span><p>We never stop learning so that we know to find solutions for our clients' needs and our own. We honestly conduct business, ensuring that all parties are benefiting from our business dealings.</p></div>
+      <div class="value-num-item"><span class="num">.07</span><p>We have faith in our abilities to grow not only our business but to grow personally as well.</p></div>
+      <div class="value-num-item"><span class="num">.04</span><p>We will build customer loyalty by nurturing our client relationships. Getting involved with the community events and becoming a presence in our industry. We are determined to succeed. We have made a choice to succeed; therefore, we will succeed.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ========== VIDEO GALLERY ========== -->
-<section class="section section--dark">
+<!-- VIDEO GALLERY -->
+<section class="section section--white">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">Our Work</span>
       <h2>Video Gallery</h2>
-      <div class="gold-rule gold-rule--center"></div>
     </div>
     <div class="video-grid reveal">
       <div class="video-thumb" data-vimeo="467194553">
         <img src="../images/about-re-videos.webp" alt="Real Estate Videos Thumbnail" loading="lazy">
-        <div class="video-thumb__play"></div>
+        <div class="video-thumb__play"><div class="video-thumb__play-btn"></div></div>
         <div class="video-thumb__title"><h4>Bronze Video Sample</h4></div>
       </div>
       <div class="video-thumb" data-vimeo="639773972">
         <img src="../images/about-construction.webp" alt="Construction Progression Thumbnail" loading="lazy">
-        <div class="video-thumb__play"></div>
+        <div class="video-thumb__play"><div class="video-thumb__play-btn"></div></div>
         <div class="video-thumb__title"><h4>Construction Progression</h4></div>
       </div>
       <div class="video-thumb" data-vimeo="306094535">
         <img src="../images/matterport-demo-reel.webp" alt="Matterport Demo Reel Thumbnail" loading="lazy">
-        <div class="video-thumb__play"></div>
+        <div class="video-thumb__play"><div class="video-thumb__play-btn"></div></div>
         <div class="video-thumb__title"><h4>Matterport Demo Reel</h4></div>
       </div>
       <div class="video-thumb" data-vimeo="300423742">
         <img src="../images/about-ferrari.webp" alt="Collection Ferrari Thumbnail" loading="lazy">
-        <div class="video-thumb__play"></div>
+        <div class="video-thumb__play"><div class="video-thumb__play-btn"></div></div>
         <div class="video-thumb__title"><h4>Collection Ferrari</h4></div>
       </div>
     </div>
     <div class="text-center mt-lg reveal">
-      <a href="../portfolio/index.html" class="btn btn--outline">View All Projects</a>
+      <a href="../portfolio/index.html" class="btn btn--outline-navy">View All Projects</a>
     </div>
   </div>
 </section>
 
-<!-- ========== FOOTER ========== -->
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="footer-logo"><img src="../images/footer-logo.webp" alt="Aerial Recon Media"></div>
-        <p>Aerial Recon Media is a Miami-based videography, photography and drone production company. We've grown to be one of South Florida's leading video, photo, and drone production companies.</p>
-        <div class="footer-contact-list">
+    <div class="footer-brand-row">
+      <div class="footer-logo"><img src="../images/footer-logo.webp" alt="Aerial Recon Media"></div>
+      <div class="footer-divider"></div>
+      <div class="footer-about">
+        <p>Aerial Recon Media is a Miami-based videography, photography and drone production company</p>
+        <p class="footer-about-sub">We're a comprehensive team of Directors, Editors, Post-Producers, Sound Producers, FAA Licensed Drone Pilots/Operators, and multi-media experts. We've grown to be one of South Florida's leading video, photo, and drone production company.</p>
+        <div class="footer-contact-row">
           <a href="tel:3055075562"><span>☎</span> (305) 507-5562</a>
           <a href="mailto:info@aerialreconmedia.com"><span>✉</span> info@aerialreconmedia.com</a>
         </div>
@@ -186,6 +188,9 @@
           <a href="https://www.youtube.com/@aerialreconmedia" target="_blank" rel="noopener" aria-label="YouTube"><img src="../images/youtube.svg" alt="YouTube"></a>
         </div>
       </div>
+      <div class="footer-assoc" style="flex-shrink:0;"><img src="../images/associations.webp" alt="Aerial Recon Media associations"></div>
+    </div>
+    <div class="footer-nav-row">
       <div class="footer-col">
         <h3>Services</h3>
         <ul>
@@ -206,7 +211,6 @@
         </ul>
       </div>
     </div>
-    <div class="footer-assoc"><img src="../images/associations.webp" alt="Aerial Recon Media professional associations"></div>
   </div>
   <div class="footer-bottom"><div class="container"><p>&copy; Copyright 2023 Aerial Recon, LLC | All Rights Reserved.</p></div></div>
 </footer>

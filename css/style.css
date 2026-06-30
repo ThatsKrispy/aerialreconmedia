@@ -1154,3 +1154,51 @@ strong { color: var(--navy); }
   .photo-grid    { grid-template-columns: 1fr; }
   .video-grid    { grid-template-columns: 1fr; }
 }
+
+/* ============================================
+   LEGACY CLASS ALIASES — keep old interior pages
+   rendering correctly under new palette until
+   each page is individually rebuilt
+   ============================================ */
+.gold-rule, .orange-rule { width:48px;height:3px;background:var(--orange);margin:0.75rem 0 1.25rem; }
+.gold-rule--center { margin-left:auto;margin-right:auto; }
+.section--black { background: var(--navy); }
+.btn--gold { background:var(--orange);color:#fff;border-color:var(--orange); }
+.btn--gold:hover { background:var(--orange-dk);border-color:var(--orange-dk); }
+.btn--outline { background:transparent;color:var(--navy);border:2px solid var(--navy); }
+.btn--outline:hover { background:var(--navy);color:#fff; }
+.section--dark p, .section--black p, .section--dark li, .section--black li { color: rgba(255,255,255,0.82); }
+.section--dark h2, .section--black h2, .section--dark h3, .section--black h3 { color:#fff; }
+.section--dark .eyebrow, .section--black .eyebrow { color: var(--orange); }
+.trust-col { background: var(--white); padding: 32px 28px; border: 1px solid var(--border); text-align:left; }
+.trust-grid { background: transparent; }
+
+/* legacy footer-inner 3-col grid (older interior pages) */
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--border);
+}
+.footer-brand .footer-logo img { height: 70px; }
+.footer-brand p { font-size:0.85rem;color:var(--muted);line-height:1.7; }
+.footer-contact-list { margin-top: 0.85rem; display:flex; flex-direction:column; gap:8px; }
+.footer-contact-list a {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--navy);
+  display:flex; gap:6px; align-items:center;
+}
+.footer-contact-list a:hover { color: var(--orange); }
+.footer-contact-list span { color: var(--orange); }
+
+@media (max-width: 1024px) {
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+}

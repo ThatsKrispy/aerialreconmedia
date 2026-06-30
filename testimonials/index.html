@@ -8,52 +8,27 @@
   <link rel="icon" type="image/png" href="../images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <style>
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
+    .t-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+    .t-card {
+      background:var(--white); border:1px solid var(--border); border-radius:4px;
+      padding:24px; box-shadow:0 2px 10px rgba(0,0,0,0.04);
     }
-    .testimonial-card {
-      background: var(--dark-alt);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--gold);
-      padding: 32px 28px;
+    .t-head { display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+    .t-avatar {
+      width:44px;height:44px;border-radius:50%;flex-shrink:0;
+      background:var(--navy); color:#fff; display:flex; align-items:center; justify-content:center;
+      font-family:var(--font-display); font-weight:700; font-size:0.85rem;
     }
-    .testimonial-card blockquote {
-      font-size: 0.95rem;
-      color: var(--light);
-      line-height: 1.75;
-      font-style: italic;
-      margin-bottom: 1.5rem;
-    }
-    .testimonial-card blockquote::before {
-      content: '\201C';
-      font-size: 3rem;
-      color: var(--gold);
-      line-height: 0;
-      vertical-align: -0.8rem;
-      margin-right: 4px;
-    }
-    .testimonial-meta { }
-    .testimonial-meta strong {
-      font-family: var(--font-display);
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--white);
-    }
-    .testimonial-meta span {
-      display: block;
-      font-size: 0.78rem;
-      color: var(--gold);
-      margin-top: 2px;
-    }
-    @media (max-width: 768px) {
-      .testimonials-grid { grid-template-columns: 1fr; }
-    }
+    .t-meta { flex:1; }
+    .t-meta strong { display:block; font-family:var(--font-display); font-size:0.85rem; color:var(--navy); }
+    .t-meta span { font-size:0.75rem; color:var(--muted); }
+    .t-g { color:#4285f4; font-family:var(--font-display); font-weight:900; font-size:1rem; }
+    .t-stars { color:#fbbc04; font-size:0.85rem; margin-bottom:8px; }
+    .t-card p { font-size:0.86rem; color:var(--body); line-height:1.65; margin:0; }
+    @media (max-width:768px){ .t-grid{ grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
@@ -81,7 +56,7 @@
   </div>
 </header>
 <nav class="mobile-nav">
-  <span class="eyebrow" style="display:block;padding:14px 24px;border-bottom:1px solid var(--border);">Services</span>
+  <span style="display:block;padding:14px 24px;border-bottom:1px solid rgba(255,255,255,0.1);font-family:var(--font-display);font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.5);">Services</span>
   <div class="mobile-sub">
     <a href="../real-estate/index.html">Real Estate Services</a>
     <a href="../aec/index.html">AEC Services</a>
@@ -95,53 +70,161 @@
   <div class="mobile-nav-cta"><a href="https://go.thryv.com/site/aerialreconllc/online-scheduling" target="_blank" rel="noopener">Book Now</a></div>
 </nav>
 
-<section class="int-hero">
+<section class="intro-section reveal" style="padding-top:calc(var(--nav-h) + 48px);">
   <div class="container">
-    <span class="eyebrow">What Our Clients Say</span>
-    <h1>Testimonials</h1>
+    <h2>Testimonials</h2>
+    <p>Here, you can read firsthand accounts from some of our satisfied customers who have experienced our services.</p>
   </div>
 </section>
 
-<section class="section section--dark">
+<section class="section section--white">
   <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Client Reviews</span>
-      <h2>Trusted by South Florida's Best</h2>
-      <div class="gold-rule gold-rule--center"></div>
-      <p>We let our work and our clients speak for themselves.</p>
+    <div class="t-grid reveal">
+
+      <div class="t-card">
+        <div class="t-head">
+          <div class="t-avatar">JB</div>
+          <div class="t-meta"><strong>Jane Barrellier (Miami Beautiful Houses)</strong><span>5 days ago</span></div>
+          <div class="t-g">G</div>
+        </div>
+        <div class="t-stars">★★★★★</div>
+        <p>Aerial recon media always does such good job capturing beautiful photography. The team is reliable, helpful, kind, and always willing to go the extra mile to make this a wonderful experience. Cheers to a great experience and exceptional team!</p>
+      </div>
+
+      <div class="t-card">
+        <div class="t-head">
+          <div class="t-avatar">ML</div>
+          <div class="t-meta"><strong>Maria Carolina Lopez</strong><span>4 weeks ago</span></div>
+          <div class="t-g">G</div>
+        </div>
+        <div class="t-stars">★★★★★</div>
+        <p>I absolutely recommend them, from the moment I made the reservation, the communication and professionalism has been top notch. The quality of the photography has been excellent.</p>
+      </div>
+
+      <div class="t-card">
+        <div class="t-head">
+          <div class="t-avatar">MA</div>
+          <div class="t-meta"><strong>Maurice Attie</strong><span>a month ago</span></div>
+          <div class="t-g">G</div>
+        </div>
+        <div class="t-stars">★★★★★</div>
+        <p>Loved working with Aerial Recon! Highly recommend. Already about to book them for my next listing.</p>
+      </div>
+
+      <div class="t-card">
+        <div class="t-head">
+          <div class="t-avatar">MS</div>
+          <div class="t-meta"><strong>Manuela Salcedo</strong><span>a month ago</span></div>
+          <div class="t-g">G</div>
+        </div>
+        <div class="t-stars">★★★★★</div>
+        <p>This was not the nicest house on the block and presented a few challenges and yet, James and his team managed to create BEAUTIFUL results. My clients are happy and so am I.... always. Thanks Aerial Recon.</p>
+      </div>
+
+      <div class="t-card">
+        <div class="t-head">
+          <div class="t-avatar">CC</div>
+          <div class="t-meta"><strong>Chris Crystal</strong><span>2 months ago</span></div>
+          <div class="t-g">G</div>
+        </div>
+        <div class="t-stars">★★★★★</div>
+        <p>I have used Aerial Recon Media repeatedly and always get great photos. They come when they are supposed to. They are always professional. But most importantly, their photos are consistently perfect for my needs.</p>
+      </div>
+
+      <div class="t-card">
+        <div class="t-head">
+          <div class="t-avatar">DF</div>
+          <div class="t-meta"><strong>David Flores</strong><span>3 months ago</span></div>
+          <div class="t-g">G</div>
+        </div>
+        <div class="t-stars">★★★★★</div>
+        <p>My experience with Aerial Recon was 100% satisfaction. Loved them, absolute professionals, very communicative and punctual. The photos and videos were stunning, I would definitely hire them again.</p>
+      </div>
+
+      <div class="t-card">
+        <div class="t-head">
+          <div class="t-avatar">KH</div>
+          <div class="t-meta"><strong>Kimberlee Hernandez, PA Realtor</strong><span>4 months ago</span></div>
+          <div class="t-g">G</div>
+        </div>
+        <div class="t-stars">★★★★★</div>
+        <p>Very pleased with the results, timely turnaround, and professionalism. Will recommend them to everyone.</p>
+      </div>
+
+      <div class="t-card">
+        <div class="t-head">
+          <div class="t-avatar">KE</div>
+          <div class="t-meta"><strong>Kristin Estrada</strong><span>5 months ago</span></div>
+          <div class="t-g">G</div>
+        </div>
+        <div class="t-stars">★★★★★</div>
+        <p>Great customer service, fast turnaround and 5-Star quality! The photographer showed up on time and super helpful. I definitely recommend using Aerial Recon. The email and call correspondence is also incredibly prompt and friendly.</p>
+      </div>
+
+      <div class="t-card">
+        <div class="t-head">
+          <div class="t-avatar">MJ</div>
+          <div class="t-meta"><strong>Maria Juarez</strong><span>5 months ago</span></div>
+          <div class="t-g">G</div>
+        </div>
+        <div class="t-stars">★★★★★</div>
+        <p>Aerial Recon Media did a fantastic job with my recent listing photo shoot and video. Great communication with Diana from start to finish. From coordinating and making adjustments to photos and attentive to communication at all times. Gustavo worked efficiently during the shoot.</p>
+      </div>
+
+      <div class="t-card">
+        <div class="t-head">
+          <div class="t-avatar">LD</div>
+          <div class="t-meta"><strong>Laura Derrick</strong><span>6 months ago</span></div>
+          <div class="t-g">G</div>
+        </div>
+        <div class="t-stars">★★★★★</div>
+        <p>Professional, friendly, punctual, great communication. I did the silver package, photos, video, drone... came out amazing. The home looks better in the photos than in person. And the turnaround time was faster than expected. Very happy to have found my new photo/video team.</p>
+      </div>
+
+      <div class="t-card">
+        <div class="t-head">
+          <div class="t-avatar">MM</div>
+          <div class="t-meta"><strong>Marietta Mont</strong><span>a year ago</span></div>
+          <div class="t-g">G</div>
+        </div>
+        <div class="t-stars">★★★★★</div>
+        <p>I have been using Aerial Recon exclusively for all my real estate photography and videography needs on all my listings. As a realtor, one way to show value to your clients and distinguish yourself is having professional photography and walk through videos on your listings.</p>
+      </div>
+
+      <div class="t-card">
+        <div class="t-head">
+          <div class="t-avatar">JG</div>
+          <div class="t-meta"><strong>Jorge A. Gonzalez, PA</strong><span>2 years ago</span></div>
+          <div class="t-g">G</div>
+        </div>
+        <div class="t-stars">★★★★★</div>
+        <p>Working with Aerial Recon has been GREAT! James and Deiza are an excellent team. The quality of their equipment coupled with their talent have provided beautiful and professional pictures and video to really bring the best out of every listing.</p>
+      </div>
+
+      <div class="t-card">
+        <div class="t-head">
+          <div class="t-avatar">MG</div>
+          <div class="t-meta"><strong>Madelaine Gutierrez</strong><span>4 years ago</span></div>
+          <div class="t-g">G</div>
+        </div>
+        <div class="t-stars">★★★★★</div>
+        <p>James with Aerial Recon was very professional. He was responsive and quick to provide the photos, video, and matterport. He has a convenient portal for scheduling appts, making payments, and asking questions. The prices are reasonable. Would definitely use his services again.</p>
+      </div>
+
+      <div class="t-card">
+        <div class="t-head">
+          <div class="t-avatar">DC</div>
+          <div class="t-meta"><strong>Deiza Contreras</strong><span>5 years ago</span></div>
+          <div class="t-g">G</div>
+        </div>
+        <div class="t-stars">★★★★★</div>
+        <p>Extremely happy with the services from Aerial Recon. They have very affordable packages for real estate agents. James and Allan are true professionals and are very easy to work with. I use them for all my photography needs now.</p>
+      </div>
+
     </div>
-    <div class="testimonials-grid reveal">
-      <div class="testimonial-card">
-        <blockquote>The photos came out absolutely stunning. We listed the property the next morning and had three offers within 48 hours. Aerial Recon Media is now our go-to for every listing.</blockquote>
-        <div class="testimonial-meta">
-          <strong>Maria R.</strong>
-          <span>Real Estate Agent, Coral Gables</span>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <blockquote>We use them for all our construction progress documentation. The aerial shots give our investors a clear picture of where we are on every project. Fast, professional, and always on time.</blockquote>
-        <div class="testimonial-meta">
-          <strong>Carlos M.</strong>
-          <span>Project Manager, South Florida AEC</span>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <blockquote>The Matterport 3D tour they created for our showroom has been incredible for out-of-state clients. They can explore the entire space before ever visiting. Absolutely worth it.</blockquote>
-        <div class="testimonial-meta">
-          <strong>Stephanie L.</strong>
-          <span>Retail Store Owner, Miami</span>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <blockquote>They covered our charity gala and the highlight reel was ready within 48 hours. The quality was broadcast-level. Our board couldn't believe it. Will absolutely use them again.</blockquote>
-        <div class="testimonial-meta">
-          <strong>James T.</strong>
-          <span>Event Director, Miami</span>
-        </div>
-      </div>
-    </div>
+
     <div class="text-center mt-lg reveal">
-      <a href="../contact/index.html" class="btn btn--gold">Work With Us</a>
+      <a href="../contact/index.html" class="btn btn--orange">Work With Us</a>
     </div>
   </div>
 </section>
@@ -150,17 +233,19 @@
   <div class="container">
     <h2>Ready to Experience the Difference?</h2>
     <p>Join our growing list of satisfied clients across South Florida.</p>
-    <a href="https://go.thryv.com/site/aerialreconllc/online-scheduling" class="btn btn--gold" target="_blank" rel="noopener">Book Now</a>
+    <a href="https://go.thryv.com/site/aerialreconllc/online-scheduling" class="btn btn--orange" target="_blank" rel="noopener">Book Now</a>
   </div>
 </section>
 
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="footer-logo"><img src="../images/footer-logo.webp" alt="Aerial Recon Media"></div>
-        <p>Aerial Recon Media is a Miami-based videography, photography and drone production company.</p>
-        <div class="footer-contact-list">
+    <div class="footer-brand-row">
+      <div class="footer-logo"><img src="../images/footer-logo.webp" alt="Aerial Recon Media"></div>
+      <div class="footer-divider"></div>
+      <div class="footer-about">
+        <p>Aerial Recon Media is a Miami-based videography, photography and drone production company</p>
+        <p class="footer-about-sub">We're a comprehensive team of Directors, Editors, Post-Producers, Sound Producers, FAA Licensed Drone Pilots/Operators, and multi-media experts.</p>
+        <div class="footer-contact-row">
           <a href="tel:3055075562"><span>☎</span> (305) 507-5562</a>
           <a href="mailto:info@aerialreconmedia.com"><span>✉</span> info@aerialreconmedia.com</a>
         </div>
@@ -172,6 +257,9 @@
           <a href="https://www.youtube.com/@aerialreconmedia" target="_blank" rel="noopener" aria-label="YouTube"><img src="../images/youtube.svg" alt="YouTube"></a>
         </div>
       </div>
+      <div class="footer-assoc" style="flex-shrink:0;"><img src="../images/associations.webp" alt="Aerial Recon Media associations"></div>
+    </div>
+    <div class="footer-nav-row">
       <div class="footer-col">
         <h3>Services</h3>
         <ul>
@@ -191,7 +279,6 @@
         </ul>
       </div>
     </div>
-    <div class="footer-assoc"><img src="../images/associations.webp" alt="Aerial Recon Media professional associations"></div>
   </div>
   <div class="footer-bottom"><div class="container"><p>&copy; Copyright 2023 Aerial Recon, LLC | All Rights Reserved.</p></div></div>
 </footer>

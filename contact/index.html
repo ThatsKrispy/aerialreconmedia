@@ -9,8 +9,13 @@
   <link rel="icon" type="image/png" href="../images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .contact-form-simple { max-width: 760px; margin: 0 auto; }
+    .form-row-2 { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+    @media (max-width:768px){ .form-row-2{ grid-template-columns:1fr; } }
+  </style>
 </head>
 <body>
 
@@ -40,7 +45,7 @@
 </header>
 
 <nav class="mobile-nav">
-  <span class="eyebrow" style="display:block;padding:14px 24px;border-bottom:1px solid var(--border);">Services</span>
+  <span style="display:block;padding:14px 24px;border-bottom:1px solid rgba(255,255,255,0.1);font-family:var(--font-display);font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.5);">Services</span>
   <div class="mobile-sub">
     <a href="../real-estate/index.html">Real Estate Services</a>
     <a href="../aec/index.html">AEC Services</a>
@@ -54,137 +59,68 @@
   <div class="mobile-nav-cta"><a href="https://go.thryv.com/site/aerialreconllc/online-scheduling" target="_blank" rel="noopener">Book Now</a></div>
 </nav>
 
-<section class="int-hero">
+<section class="intro-section reveal" style="padding-top:calc(var(--nav-h) + 48px);">
   <div class="container">
-    <span class="eyebrow">Get in Touch</span>
-    <h1>Contact Us</h1>
+    <h2>Contact Us</h2>
+    <p>If you have any questions or would like to learn more about our services, please don't hesitate to contact us using the form below.</p>
   </div>
 </section>
 
-<section class="section section--dark">
+<section class="section section--white">
   <div class="container">
-    <div class="contact-layout">
-
-      <!-- Contact Form -->
-      <div class="reveal">
-        <span class="eyebrow">Send Us a Message</span>
-        <h2>Let's Talk About Your Project</h2>
-        <div class="gold-rule"></div>
-        <p style="color:var(--muted);margin-bottom:2rem;">If you have any questions or would like to learn more about our services, please don't hesitate to reach out using the form below.</p>
-
-        <!-- Replace action="#" with your Formspree endpoint or backend URL -->
-        <form id="contactForm" action="#" method="POST" novalidate>
+    <div class="contact-form-simple reveal">
+      <!-- Replace action="#" with your Formspree endpoint or backend URL -->
+      <form id="contactForm" action="#" method="POST" novalidate>
+        <div class="form-row-2">
           <div class="form-group">
             <label for="firstName">First Name <span>*</span></label>
-            <input type="text" id="firstName" name="first_name" required placeholder="Your first name" autocomplete="given-name">
+            <input type="text" id="firstName" name="first_name" required autocomplete="given-name">
           </div>
           <div class="form-group">
             <label for="email">Email Address <span>*</span></label>
-            <input type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email">
+            <input type="email" id="email" name="email" required autocomplete="email">
           </div>
-          <div class="form-group">
-            <label for="phone">Phone Number <span>*</span></label>
-            <input type="tel" id="phone" name="phone" required placeholder="(305) 000-0000" autocomplete="tel">
-          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number <span>*</span></label>
+          <input type="tel" id="phone" name="phone" required autocomplete="tel">
+        </div>
+
+        <div class="form-row-2">
           <div class="form-group">
             <label for="industry">Industry <span>*</span></label>
-            <select id="industry" name="industry" required>
-              <option value="" disabled selected>Select your industry</option>
-              <option value="real-estate">Real Estate</option>
-              <option value="aec">Architecture / Engineering / Construction</option>
-              <option value="corporate">Corporate</option>
-              <option value="events">Events</option>
-              <option value="marketing">Marketing &amp; Social Media</option>
-              <option value="other">Other</option>
-            </select>
+            <input type="text" id="industry" name="industry" required placeholder="E.g. Realtor, Broker, Engineer">
           </div>
           <div class="form-group">
             <label for="hasPhotog">Do you currently have a Real Estate Photographer? <span>*</span></label>
-            <select id="hasPhotog" name="has_photographer" required>
-              <option value="" disabled selected>Select an option</option>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-              <option value="na">Not applicable</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Tell us about your project..."></textarea>
-          </div>
-          <!-- Hidden honeypot field for spam prevention -->
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-          <button type="submit" class="btn btn--gold" style="width:100%;justify-content:center;">Send Message</button>
-          <div id="formStatus" class="form-status" role="alert"></div>
-        </form>
-      </div>
-
-      <!-- Contact Info -->
-      <div class="reveal reveal-delay-1">
-        <span class="eyebrow">Reach Us Directly</span>
-        <h2>Contact Information</h2>
-        <div class="gold-rule"></div>
-        <div class="contact-info">
-          <div class="contact-info-item">
-            <div class="contact-info-icon">☎</div>
-            <div>
-              <h3>Phone</h3>
-              <a href="tel:3055075562">(305) 507-5562</a>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-icon">✉</div>
-            <div>
-              <h3>Email</h3>
-              <a href="mailto:info@aerialreconmedia.com">info@aerialreconmedia.com</a>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-icon">📍</div>
-            <div>
-              <h3>Service Area</h3>
-              <p style="margin:0;font-size:0.88rem;">Miami-Dade | Broward | Palm Beach<br>From the Keys to Palm Beach</p>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-icon">🕐</div>
-            <div>
-              <h3>Availability</h3>
-              <p style="margin:0;font-size:0.88rem;">Monday – Saturday<br>By appointment</p>
-            </div>
+            <input type="text" id="hasPhotog" name="has_photographer" required placeholder="E.g. Yes, No">
           </div>
         </div>
 
-        <!-- Online Booking CTA -->
-        <div style="margin-top:2rem;padding:24px;background:var(--dark-alt);border:1px solid var(--border);border-left:3px solid var(--gold);">
-          <h3 style="margin-bottom:0.75rem;font-size:0.85rem;">Prefer to Book Online?</h3>
-          <p style="font-size:0.88rem;color:var(--muted);margin-bottom:1rem;">Use our online scheduling tool to book a session at a time that works for you.</p>
-          <a href="https://go.thryv.com/site/aerialreconllc/online-scheduling" class="btn btn--gold btn--sm" target="_blank" rel="noopener">Schedule Online</a>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message"></textarea>
         </div>
 
-        <!-- Social -->
-        <div style="margin-top:2rem;">
-          <h3 style="font-size:0.72rem;letter-spacing:0.15em;color:var(--gold);margin-bottom:1rem;">Follow Us</h3>
-          <div class="footer-social">
-            <a href="https://www.facebook.com/aerialreconmedia" target="_blank" rel="noopener" aria-label="Facebook"><img src="../images/facebook.svg" alt="Facebook"></a>
-            <a href="https://www.instagram.com/aerial_recon/" target="_blank" rel="noopener" aria-label="Instagram"><img src="../images/instagram.svg" alt="Instagram"></a>
-            <a href="https://www.linkedin.com/company/aerial-recon-llc" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="../images/linkedin.svg" alt="LinkedIn"></a>
-            <a href="https://vimeo.com/aerialreconmedia" target="_blank" rel="noopener" aria-label="Vimeo"><img src="../images/vimeo.svg" alt="Vimeo"></a>
-            <a href="https://www.youtube.com/@aerialreconmedia" target="_blank" rel="noopener" aria-label="YouTube"><img src="../images/youtube.svg" alt="YouTube"></a>
-          </div>
-        </div>
-      </div>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
+        <button type="submit" class="btn btn--orange">Submit</button>
+        <div id="formStatus" class="form-status" role="alert"></div>
+      </form>
     </div>
   </div>
 </section>
 
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="footer-logo"><img src="../images/footer-logo.webp" alt="Aerial Recon Media"></div>
-        <p>Aerial Recon Media is a Miami-based videography, photography and drone production company. We're a comprehensive team of Directors, Editors, Post-Producers, Sound Producers, FAA Licensed Drone Pilots/Operators, and multi-media experts.</p>
-        <div class="footer-contact-list">
+    <div class="footer-brand-row">
+      <div class="footer-logo"><img src="../images/footer-logo.webp" alt="Aerial Recon Media"></div>
+      <div class="footer-divider"></div>
+      <div class="footer-about">
+        <p>Aerial Recon Media is a Miami-based videography, photography and drone production company</p>
+        <p class="footer-about-sub">We're a comprehensive team of Directors, Editors, Post-Producers, Sound Producers, FAA Licensed Drone Pilots/Operators, and multi-media experts. We've grown to be one of South Florida's leading video, photo, and drone production company.</p>
+        <div class="footer-contact-row">
           <a href="tel:3055075562"><span>☎</span> (305) 507-5562</a>
           <a href="mailto:info@aerialreconmedia.com"><span>✉</span> info@aerialreconmedia.com</a>
         </div>
@@ -196,6 +132,9 @@
           <a href="https://www.youtube.com/@aerialreconmedia" target="_blank" rel="noopener" aria-label="YouTube"><img src="../images/youtube.svg" alt="YouTube"></a>
         </div>
       </div>
+      <div class="footer-assoc" style="flex-shrink:0;"><img src="../images/associations.webp" alt="Aerial Recon Media associations"></div>
+    </div>
+    <div class="footer-nav-row">
       <div class="footer-col">
         <h3>Services</h3>
         <ul>
@@ -216,7 +155,6 @@
         </ul>
       </div>
     </div>
-    <div class="footer-assoc"><img src="../images/associations.webp" alt="Aerial Recon Media professional associations"></div>
   </div>
   <div class="footer-bottom"><div class="container"><p>&copy; Copyright 2023 Aerial Recon, LLC | All Rights Reserved.</p></div></div>
 </footer>
