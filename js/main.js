@@ -33,6 +33,27 @@
     document.body.style.overflow = '';
   }
 
+  /* ---- DESKTOP SERVICES DROPDOWN ---- */
+  /* Hover still works via CSS. This adds click support (so a tap or a
+     click commits to opening it, rather than relying on hover alone)
+     and keyboard/Escape support, then closes on outside click. */
+  const dropdownParents = document.querySelectorAll('.has-dropdown');
+  dropdownParents.forEach(parent => {
+    const trigger = parent.querySelector(':scope > a');
+    if (!trigger) return;
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isOpen = parent.classList.contains('open');
+      dropdownParents.forEach(p => p.classList.remove('open'));
+      if (!isOpen) parent.classList.add('open');
+    });
+  });
+  document.addEventListener('click', (e) => {
+    dropdownParents.forEach(p => {
+      if (!p.contains(e.target)) p.classList.remove('open');
+    });
+  });
+
   /* ---- NAV SCROLL SHADOW ---- */
   const header = document.querySelector('.site-header');
   if (header) {
@@ -102,6 +123,7 @@
     if (e.key === 'Escape') {
       closeVideoModal();
       closeMobileNav && closeMobileNav();
+      dropdownParents.forEach(p => p.classList.remove('open'));
     }
   });
 

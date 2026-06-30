@@ -107,6 +107,15 @@ strong { color: var(--navy); }
 .section--dark   { background: #1a1f2e; }
 
 .text-center { text-align: center; }
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
 .mt-sm { margin-top: 1rem; }
 .mt-md { margin-top: 2rem; }
 .mt-lg { margin-top: 3rem; }
@@ -206,24 +215,45 @@ strong { color: var(--navy); }
 .nav-links > li > a.active { color: var(--orange); }
 
 .has-dropdown { position: relative; }
+.has-dropdown > a {
+  cursor: pointer;
+}
 .has-dropdown > a::after {
   content: '▾';
   font-size: 0.6rem;
   color: var(--orange);
   margin-left: 2px;
+  transition: transform 0.2s;
 }
+.has-dropdown.open > a::after,
+.has-dropdown:hover > a::after { transform: rotate(180deg); }
+
+/* The dropdown sits flush against the trigger (top:100%, no gap) so
+   :hover never breaks crossing into it. visibility+opacity (not
+   display) is used so the panel always has real layout/paint, just
+   invisible and non-interactive when closed — this avoids any
+   stacking-order ambiguity with negative z-index tricks. */
 .dropdown {
-  display: none;
   position: absolute;
-  top: calc(100% + 12px);
+  top: 100%;
   left: 0;
+  margin-top: 0;
+  min-width: 240px;
   background: var(--white);
   border-top: 3px solid var(--orange);
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-  min-width: 240px;
-  z-index: 100;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.12s ease;
 }
-.has-dropdown:hover .dropdown { display: block; }
+.has-dropdown:hover .dropdown,
+.has-dropdown.open .dropdown {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
 .dropdown a {
   display: block;
   padding: 11px 20px;
@@ -236,7 +266,7 @@ strong { color: var(--navy); }
   border-bottom: 1px solid var(--border);
   transition: all 0.15s;
 }
-.dropdown a:last-child { border-bottom: none; }
+.dropdown li:last-child a { border-bottom: none; }
 .dropdown a:hover { color: var(--orange); padding-left: 26px; background: var(--cream); }
 
 .nav-cta {
@@ -249,6 +279,7 @@ strong { color: var(--navy); }
   color: #fff !important;
   padding: 9px 18px;
   border-radius: 3px;
+  margin-left: 0.75rem;
   transition: background 0.2s;
 }
 .nav-cta:hover { background: var(--orange-dk) !important; }
@@ -422,7 +453,9 @@ strong { color: var(--navy); }
   padding: 56px 0;
   text-align: center;
 }
+.intro-section--page-top { padding-top: calc(var(--nav-h) + 48px); }
 .intro-section h2 { color: var(--navy); margin-bottom: 0.75rem; }
+.intro-section h1 { color: var(--navy); margin-bottom: 0.75rem; font-size: clamp(1.6rem, 3vw, 2.2rem); }
 .intro-section p { max-width: 680px; margin: 0 auto; color: var(--muted); font-size: 0.95rem; }
 
 /* ============================================
@@ -686,10 +719,12 @@ strong { color: var(--navy); }
 .portfolio-2up-caption {
   margin-top: 10px;
 }
-.portfolio-2up-caption h4 {
+.portfolio-2up-caption h3 {
   font-size: 0.82rem;
   color: var(--navy);
   margin-bottom: 2px;
+  letter-spacing: normal;
+  text-transform: none;
 }
 .portfolio-2up-caption p {
   font-size: 0.8rem;
@@ -811,8 +846,10 @@ strong { color: var(--navy); }
   background: var(--white);
   border-top: 2px solid var(--orange);
 }
-.video-thumb__title h4 {
+.video-thumb__title h3 {
   font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   color: var(--navy);
   margin: 0;
 }
@@ -856,7 +893,7 @@ strong { color: var(--navy); }
   background: var(--white);
   border-top: 2px solid var(--orange);
 }
-.matterport-card__title h4 { font-size: 0.7rem; color: var(--navy); margin: 0; }
+.matterport-card__title h3 { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; color: var(--navy); margin: 0; }
 
 /* ============================================
    CORE VALUES
