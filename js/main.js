@@ -225,4 +225,27 @@
     });
   }
 
+
+  /* Auto-refresh Google-style relative review dates from an anchor date.
+     Each review span has data-ago="YYYY-MM-DD"; this recomputes "X ago"
+     on every page load so testimonials never go stale. */
+  (function refreshReviewDates(){
+    var els = document.querySelectorAll('.js-ago[data-ago]');
+    if (!els.length) return;
+    var now = new Date();
+    els.forEach(function(el){
+      var d = new Date(el.getAttribute('data-ago') + 'T00:00:00');
+      if (isNaN(d.getTime())) return;
+      var days = Math.floor((now - d) / 86400000);
+      var t;
+      if (days < 1)        t = 'today';
+      else if (days < 2)   t = 'yesterday';
+      else if (days < 7)   t = days + ' days ago';
+      else if (days < 30)  { var w = Math.floor(days / 7);  t = w + (w === 1 ? ' week ago'  : ' weeks ago'); }
+      else if (days < 365) { var m = Math.floor(days / 30); t = m + (m === 1 ? ' month ago' : ' months ago'); }
+      else                 { var y = Math.floor(days / 365); t = y + (y === 1 ? ' year ago'  : ' years ago'); }
+      el.textContent = t;
+    });
+  })();
+
 })();
